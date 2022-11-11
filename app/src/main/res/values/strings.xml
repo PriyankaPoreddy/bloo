@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">bloo+</string>
+    <string name="first_name">FirstName</string>
+    <string name="last_name">LastName</string>
+    <string name="email">EnterEmailID</string>
+    <string name="password">EnterPassword</string>
+    <string name="phone">EnterPhoneNumber</string>
+    <string name="confirmPwd">ConfirmPassword</string>
+</resources>
