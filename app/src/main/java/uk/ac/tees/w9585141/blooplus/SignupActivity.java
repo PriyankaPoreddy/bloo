@@ -63,7 +63,7 @@ public class SignupActivity extends AppCompatActivity {
 
 
         Button Signin=findViewById(R.id.SignInButton);
-        Button Cancel = findViewById(R.id.SignInButton);
+        Button Cancel = findViewById(R.id.signupCancel);
 
 
         Signin.setOnClickListener(new View.OnClickListener() {
@@ -126,6 +126,15 @@ public class SignupActivity extends AppCompatActivity {
                     progressBar.setVisibility(View.VISIBLE);
                     signupUser(FirstName, Lastname, email, Phone, password);
                 }
+            }
+        });
+
+        Cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
