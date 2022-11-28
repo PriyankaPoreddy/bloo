@@ -9,6 +9,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -16,11 +17,14 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity {
     Button signup;
     Button login;
     String textEmail;
     String textPwd;
+    TextView frgtPasswd;
     private EditText emailAd,Paswd;
     private FirebaseAuth authProfile;
 
@@ -29,10 +33,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getSupportActionBar().setTitle("Login");
+        setTitle("Login");
 
         emailAd= findViewById(R.id.emailAddressLogin);
         Paswd= findViewById(R.id.editPasswordLogin);
+        frgtPasswd= findViewById(R.id.forgetpwd);
 
         authProfile= FirebaseAuth.getInstance();
 
@@ -45,6 +50,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        frgtPasswd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(MainActivity.this, ForgotPswrdScreen.class);
+                startActivity(intent);
+            }
+        });
+
+
 
         login= findViewById(R.id.button);
         login.setOnClickListener(new View.OnClickListener() {
