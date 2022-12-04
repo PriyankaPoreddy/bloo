@@ -2,25 +2,42 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/menu_profileicon"
-            android:icon="@drawable/ic_baseline_person"
-            android:title="My Profile"
-            app:showAsAction = "ifRoom"
-            />
-    <item android:id="@+id/menu_myprofile"
-            android:title="My Profile"
-            app:showAsAction = "never"
-            />
-    <item android:id="@+id/menu_Doctors"
-            android:title="Doctors"
-            app:showAsAction = "never"
-            />
-    <item android:id="@+id/menu_appointments"
-            android:title="Appointments"
-            app:showAsAction = "never"
-            />
-    <item android:id="@+id/menu_Files"
-            android:title="Documents"
-            app:showAsAction = "never"
-            />
+    <group
+            android:id="@+id/mainGroup"
+            android:checkableBehavior="single">
+
+        <item
+                android:id="@+id/nav_profile"
+                android:icon="@mipmap/ic_home_black_"
+                android:title="MyProfile" />
+        <item
+                android:id="@+id/nav_showAppointment"
+                android:icon="@mipmap/icon"
+                android:title="Appointment"/>
+        <item
+                android:id="@+id/nav_bookedAppointment"
+                android:icon="@mipmap/icon"
+                android:title="Booked Appointment"/>
+        <item
+                android:id="@+id/nav_Documents"
+                android:icon="@mipmap/icon"
+                android:title="Documents"/>
+
+        <item
+                android:id="@+id/nav_logout"
+                android:icon="@mipmap/logout"
+                android:title="Log Out"/>
+
+
+    </group>
+
+    <group
+            android:id="@+id/helpGroop"
+            android:checkableBehavior="single">
+
+        <item
+                android:id="@+id/nav_aboutapp"
+                android:title="About App"/>
+
+    </group>
 </menu>

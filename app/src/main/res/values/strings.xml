@@ -7,4 +7,6 @@
     <string name="password">EnterPassword</string>
     <string name="phone">EnterPhoneNumber</string>
     <string name="confirmPwd">ConfirmPassword</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

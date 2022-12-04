@@ -7,7 +7,7 @@
     android:background="@drawable/background"
     android:layout_height="match_parent"
         android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".auth.LoginActivity">
 <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -44,6 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="45dp"
             android:layout_marginLeft="0dp"
+            android:layout_marginRight="10dp"
             android:layout_marginTop="250dp"
                 android:src="@drawable/ic_baseline_email_white" />
     <EditText
@@ -51,11 +52,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="250dp"
-        android:gravity="center"
+        android:gravity="left"
         android:ems="10"
         android:hint="@string/email"
             android:textColor="#FFF"
-        android:inputType="textEmailAddress"/>
+            android:textColorHint="@color/white"
+            android:inputType="textEmailAddress"/>
     </LinearLayout>
 
 
@@ -69,6 +71,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="45dp"
                 android:layout_marginLeft="0dp"
+                android:layout_marginRight="10dp"
                 android:layout_marginTop="290dp"
                 android:src="@drawable/ic_baseline_lock_white" />
 
@@ -77,10 +80,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="290dp"
-                android:gravity="center"
+                android:gravity="left"
                 android:ems="10"
                 android:textColor="#FFF"
                 android:hint="@string/password"
+                android:textColorHint="@color/white"
                 android:inputType="textPassword"/>
     </LinearLayout>
 
@@ -88,12 +92,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:layout_marginTop="400dp">
     <Button
-            android:id="@+id/SignupButton"
+            android:id="@+id/signupbutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="380dp"
             android:layout_marginLeft="100dp"
             android:text="signup"
             />
@@ -103,7 +107,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Login"
-            android:layout_marginTop="380dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="100dp" />
 
@@ -120,10 +123,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:clickable="true"
-                android:layout_marginTop="600dp"
+                android:layout_marginTop="650dp"
                 android:gravity="center_horizontal"
                 android:layout_marginLeft="15dp"
-                android:layout_marginBottom="100dp"
+                android:layout_marginBottom="50dp"
                 android:layout_marginRight="15dp"
                 android:text="Forgot Password..? Click Here"
                 android:textSize="20dp"
