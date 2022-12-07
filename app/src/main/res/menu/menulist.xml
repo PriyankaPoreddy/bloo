@@ -7,24 +7,28 @@
             android:checkableBehavior="single">
 
         <item
-                android:id="@+id/nav_profile"
+                android:id="@+id/menu_profile"
                 android:icon="@mipmap/ic_home_black_"
                 android:title="MyProfile" />
         <item
-                android:id="@+id/nav_showAppointment"
+                android:id="@+id/menu_showAppointment"
                 android:icon="@mipmap/icon"
-                android:title="Appointment"/>
+                android:title="View Appointment"/>
         <item
-                android:id="@+id/nav_bookedAppointment"
+                android:id="@+id/menu_bookedAppointment"
                 android:icon="@mipmap/icon"
                 android:title="Booked Appointment"/>
         <item
-                android:id="@+id/nav_Documents"
+                android:id="@+id/menu_login"
+                android:icon="@drawable/ic_baseline_login"
+                android:title="Login (or Register)"/>
+        <item
+                android:id="@+id/menu_Documents"
                 android:icon="@mipmap/icon"
                 android:title="Documents"/>
 
         <item
-                android:id="@+id/nav_logout"
+                android:id="@+id/menu_logout"
                 android:icon="@mipmap/logout"
                 android:title="Log Out"/>
 
@@ -32,11 +36,11 @@
     </group>
 
     <group
-            android:id="@+id/helpGroop"
+            android:id="@+id/menuhelpGroop"
             android:checkableBehavior="single">
 
         <item
-                android:id="@+id/nav_aboutapp"
+                android:id="@+id/menu_aboutapp"
                 android:title="About App"/>
 
     </group>

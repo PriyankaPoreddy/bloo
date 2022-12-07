@@ -1,43 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+        android:orientation="vertical"
     tools:context=".auth.ForgotPswrdScreen">
 
-    <EditText
-        android:id="@+id/editTextTextPersonName3"
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:background="@drawable/hmtab_background">
+
+        <ImageView
+                android:id="@+id/forgetback"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_baseline_arrow_back_white"
+                android:layout_alignParentLeft="true"
+                android:clickable="true"    />
+        <TextView
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Forgot Password..?"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:gravity="center"/>
+
+    </LinearLayout>
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/cardview_light_background"
+            android:layout_below="@id/linear_ll"
+            android:paddingRight="8dp"
+            android:paddingLeft="8dp"/>
+
+
+<!--    <include-->
+<!--            android:id="@+id/forgotpwdScreen"-->
+<!--            layout="@layout/toolbar"/>-->
+<LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:ems="10"
-        android:text=""
-        android:hint="@string/email"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.552"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.087" />
+        android:orientation="vertical"
+        android:layout_gravity="center">
+
+</LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="141dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+        <ImageView
+                android:layout_width="48dp"
+                android:layout_height="88dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/ic_baseline_email" />
+
+        <EditText
+                android:id="@+id/editTextTextPersonName3"
+                android:layout_width="207dp"
+                android:layout_height="88dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="20dp"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:textColorHint="@color/black" />
+    </LinearLayout>
 
     <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="63dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="OK"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
-        app:layout_constraintVertical_bias="0.127" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+            android:id="@+id/frgtButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/purple_500"
+            android:text="OK"
+            android:textColor="@color/white" />
+</LinearLayout>
