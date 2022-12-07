@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+        android:orientation="vertical"
+    tools:context=".DoctorDetails.showDocAppointmentActivity">
+
+    <include
+            android:id="@+id/doctor_appointment_layout"
+            layout="@layout/applicationbar" />
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_btn">
+
+        <TextView
+                android:id="@+id/showAppointment_selectedDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Selected Date"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold|italic"
+                android:visibility="gone" />
+
+        <TextView
+                android:id="@+id/showApp_selecteDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Select Date"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold|italic" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/appointments_show"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+</LinearLayout>
