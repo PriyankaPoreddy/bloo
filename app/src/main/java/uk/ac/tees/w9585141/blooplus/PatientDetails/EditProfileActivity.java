@@ -33,7 +33,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.util.UUID;
+import java.util.HashMap;
 
 import uk.ac.tees.w9585141.blooplus.R;
 
@@ -51,12 +51,13 @@ public class EditProfileActivity extends AppCompatActivity {
 
     String firstName,lastname,email,Phone,password;
 
+    DocumentReference docref;
+
 
     public static final String TAG= "EditProfileActivity";
 
  //FirebaseDatabase fdb= FirebaseDatabase.getInstance();
 //    DatabaseReference dbref;
-    DocumentReference docref;
     FirebaseFirestore fbStore= FirebaseFirestore.getInstance();
 
    private DatabaseReference mDB = FirebaseDatabase.getInstance().getReference().child("user");
@@ -91,7 +92,7 @@ public class EditProfileActivity extends AppCompatActivity {
         if (user != null) {
             crntuser=user.getUid();
         }
-        docref=fbStore.collection("user").document(crntuser);
+       docref=fbStore.collection("user").document(crntuser);
 
 
 
@@ -184,7 +185,7 @@ public class EditProfileActivity extends AppCompatActivity {
         String uPhn= mpe_phn.getText().toString();
         String uPwd= mpe_password.getText().toString();
 
-        DocumentReference docref= fbStore.collection("user").document(crntuser);
+       docref= fbStore.collection("user").document(crntuser);
 
         fbStore.runTransaction(new Transaction.Function<Void>() {
                     @Override
@@ -196,6 +197,7 @@ public class EditProfileActivity extends AppCompatActivity {
                         transaction.update(docref, "email",email);
                         transaction.update(docref, "phone",Phone);
                         transaction.update(docref, "password",password);
+                        transaction.update(docref, "url",urlImage);//image store into database store
 
                         // Success
                         return null;
@@ -251,10 +253,10 @@ public class EditProfileActivity extends AppCompatActivity {
         progressDialog.setTitle("Image is uploading....");
         progressDialog.show();
 
-        final String rkey= UUID.randomUUID().toString();
+        final String rkey= "MP-";
         storef = fstorage.getReference();
 
-        StorageReference imageref = storef.child("images/"+rkey);
+        StorageReference imageref = storef.child("images/"+rkey+crntuser);
 
 
 //        imageref.putFile(imageUri);
@@ -282,6 +284,13 @@ public class EditProfileActivity extends AppCompatActivity {
                     Snackbar.make(findViewById(android.R.id.content),"Image is uploaded",Snackbar.LENGTH_SHORT).show();
                     Log.d(TAG, "onComplete: Image uploaded successfully"+task.getResult());
                     progressDialog.dismiss();
+
+                    HashMap<String, Object> imgvalue= new HashMap<>();
+                    imgvalue.put("url",urlImage);
+                    //mDB.child(crntuser).updateChildren(imgvalue);
+                    Log.d(TAG, "onComplete: Image stored in databse successfully");
+
+
                 } else {
                     // Handle failures
                     // ...

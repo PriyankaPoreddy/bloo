@@ -68,6 +68,7 @@ public class HomeActivity extends AppCompatActivity implements  NavigationView.O
         //Toolbar
         mToolbar = (Toolbar) findViewById(R.id.main_toolbar);
         setSupportActionBar(mToolbar);
+
         getSupportActionBar().setTitle("Book Appointment");
 
         //DrawerLayout and ToggleButton
@@ -114,17 +115,17 @@ public class HomeActivity extends AppCompatActivity implements  NavigationView.O
         FirebaseUser currentUser = mAuth.getCurrentUser();
 
         Menu menuNav = mNavigationView.getMenu();
-        final MenuItem nav_profile = menuNav.findItem(R.id.menu_profile);
-        final MenuItem nav_ShowAppointment = menuNav.findItem(R.id.menu_showAppointment);
-        final MenuItem nav_BookedAppointment = menuNav.findItem(R.id.menu_bookedAppointment);
+        MenuItem nav_profile = menuNav.findItem(R.id.menu_profile);
+        MenuItem nav_ShowAppointment = menuNav.findItem(R.id.menu_showAppointment);
+        MenuItem nav_BookedAppointment = menuNav.findItem(R.id.menu_bookedAppointment);
         MenuItem nav_logOut = menuNav.findItem(R.id.menu_logout);
         MenuItem nav_logIn = menuNav.findItem(R.id.menu_login);
 
-        nav_profile.setVisible(false);
-        nav_ShowAppointment.setVisible(false);
-        nav_BookedAppointment.setVisible(false);
+        nav_profile.setVisible(true);
+        nav_ShowAppointment.setVisible(true);
+        nav_BookedAppointment.setVisible(true);
         nav_logIn.setVisible(false);
-        nav_logOut.setVisible(false);
+        nav_logOut.setVisible(true);
 
 
         // Check if user is signed in  or not
