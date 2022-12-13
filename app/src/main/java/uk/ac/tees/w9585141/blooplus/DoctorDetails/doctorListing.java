@@ -32,7 +32,6 @@ public class doctorListing extends AppCompatActivity {
             case R.id.menu_profile:
                 Toast.makeText(this, "MyProfile is selected", Toast.LENGTH_SHORT);
                 return true;
-
             case R.id.menu_showAppointment:
                 Toast.makeText(this, "appointments selected", Toast.LENGTH_SHORT);
                 return true;

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+        android:orientation="vertical"
+    tools:context=".PatientDetails.viewAppActivity">
+
+    <include
+            android:id="@+id/viewbookedapp"
+            layout="@layout/applicationbar"/>
+
+
+    <LinearLayout
+            android:id="@+id/drnamelayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/viewbookedapp"
+            android:layout_marginTop="15dp">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="Doctor Name :"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textColor="@color/blue"/>
+
+        <TextView
+                android:id="@+id/va_docName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="Dr.Grace"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textColor="@color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/drdatelayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_below="@+id/drnamelayout"
+            android:layout_marginTop="15dp">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="Date of Appointment :"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textColor="@color/blue"/>
+
+        <TextView
+                android:id="@+id/va_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="12-09-2022"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textColor="@color/blue" />
+
+    </LinearLayout>
+
+    <TextView
+            android:id="@+id/bookedText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Appointment Booked Successfully "
+            android:textColor="@color/blue"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+</RelativeLayout>

@@ -1,6 +1,7 @@
 package uk.ac.tees.w9585141.blooplus.auth;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -28,8 +29,10 @@ public class LoginActivity extends AppCompatActivity {
     String textEmail;
     String textPwd;
     TextView frgtPasswd;
+    //public static String uid;
     private EditText emailAd,Paswd;
     private FirebaseAuth authProfile;
+    public static final String SHARED_PREF="sharedPrefs";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +46,8 @@ public class LoginActivity extends AppCompatActivity {
         frgtPasswd= findViewById(R.id.Loginforgetpwd);
 
         authProfile= FirebaseAuth.getInstance();
+
+       // checkbox();
 
 
         signup = findViewById(R.id.signupbutton);
@@ -93,6 +98,21 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    /*private void checkbox() {
+
+        SharedPreferences sharedPreferences= getSharedPreferences(SHARED_PREF, MODE_PRIVATE);
+        String check= sharedPreferences.getString("name","");
+
+        if(check.equals("true")){
+
+            Toast.makeText(LoginActivity.this,"User Logged In successfully", Toast.LENGTH_LONG).show();
+            Intent intent= new Intent(LoginActivity.this, HomeActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
+    }*/
+
     @Override
     protected void onStop() {
         super.onStop();
@@ -105,6 +125,11 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
+                    /*SharedPreferences sharedPreferences= getSharedPreferences(SHARED_PREF,MODE_PRIVATE);
+                    SharedPreferences.Editor editor=sharedPreferences.edit();
+                    editor.putString("name", "true");
+                    editor.apply();*/
+
                     Toast.makeText(LoginActivity.this,"User Logged In successfully", Toast.LENGTH_LONG).show();
                     Intent intent= new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(intent);

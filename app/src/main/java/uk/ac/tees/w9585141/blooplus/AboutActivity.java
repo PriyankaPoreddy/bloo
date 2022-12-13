@@ -19,7 +19,7 @@ public class AboutActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about);
+        //setContentView(R.layout.activity_about);
 
 
         simulateDayNight(/* DAY */ 0);
@@ -32,12 +32,8 @@ public class AboutActivity extends AppCompatActivity {
                 .addItem(new Element().setTitle("Version 1"))
                 .addItem(adsElement)
                 .addGroup("Connect with us")
-                .addEmail("kumaraman367@gmail.com")
-                .addWebsite("http://aman367.rf.gd")
-                .addFacebook("amcool367")
-                .addTwitter("amcool367")
-                .addInstagram("amcool367")
-                .addGitHub("amankumar367/HospitalAppointy")
+                .addEmail("priyanka.poreddy2203@gmail.com")
+                .addGitHub("https://github.com/PriyankaPoreddy/bloo")
                 .addItem(getCopyRightsElement())
                 .create();
 

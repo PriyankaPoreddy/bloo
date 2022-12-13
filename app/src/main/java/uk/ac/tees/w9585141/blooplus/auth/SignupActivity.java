@@ -37,6 +37,7 @@ import java.util.Map;
 import uk.ac.tees.w9585141.blooplus.PatientDetails.Myprofile;
 import uk.ac.tees.w9585141.blooplus.R;
 import uk.ac.tees.w9585141.blooplus.Users;
+import uk.ac.tees.w9585141.blooplus.home.HomeActivity;
 
 public class SignupActivity extends AppCompatActivity {
         private static final String TAG = "TAG";
@@ -44,7 +45,7 @@ public class SignupActivity extends AppCompatActivity {
         String emailPattern= "[a-zA-Z0-9\\!\\@\\#\\$]{8,24}";
         ProgressDialog progressDialog;
 
-        String CurrUserId;
+        public static String CurrUserId;
 
         private ProgressBar progressBar;
 
@@ -200,8 +201,9 @@ public class SignupActivity extends AppCompatActivity {
                                                 user.put("email",email);
                                                 user.put("phone",Phone);
                                                 user.put("password",password);
+                                                user.put("imageRef",null);
 
-                                                docref.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                docref.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                                         @Override
                                                         public void onSuccess(Void unused) {
                                                                 Log.d(TAG, "onsucces: user profile is created for " + CurrUserId);
@@ -213,7 +215,7 @@ public class SignupActivity extends AppCompatActivity {
                                                         }
                                                 });
                                                 //open user profile after successful registration
-                                                Intent intnt = new Intent(SignupActivity.this, Myprofile.class);
+                                                Intent intnt = new Intent(SignupActivity.this, HomeActivity.class);
                                                 startActivity(intnt);
                                                 //to prevent the user returning back to register activity on pressing back button after registration
                                                 intnt.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_NEW_TASK);

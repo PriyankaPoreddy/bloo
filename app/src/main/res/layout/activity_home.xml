@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
         android:id="@+id/home_layOut"
+        android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".home.HomeActivity">
+        tools:context=".home.HomeActivity">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -13,9 +14,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            tools:context="com.example.aman.hospitalappointy.home.HomeActivity">
+            tools:context="uk.ac.tees.w9585141.blooplus.home.HomeActivity">
 
-        <com.google.android.material.appbar.AppBarLayout
+
+    <com.google.android.material.appbar.AppBarLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/hmtab_background"
@@ -28,25 +30,9 @@
           <com.google.android.material.tabs.TabLayout
                     android:id="@+id/home_tabLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                   app:tabIndicatorColor="@android:color/white"
-                    app:tabIndicatorHeight="3dp"
-                  app:tabMode="fixed"
-                  app:tabGravity="fill">
-
-              <com.google.android.material.tabs.TabItem
-                      android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                  android:text="Specialization" />
-              <com.google.android.material.tabs.TabItem
-                      android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:text="Doctors" />
-              <com.google.android.material.tabs.TabItem
-                      android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:text="Schedule" />
-
+                    android:layout_height="match_parent"
+                    app:tabIndicatorColor="@android:color/white"
+                    app:tabIndicatorHeight="3dp">
           </com.google.android.material.tabs.TabLayout>
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -58,13 +44,6 @@
                 android:layout_height="match_parent">
 
         </androidx.viewpager.widget.ViewPager>
-        
-<!--        <androidx.viewpager2.widget.ViewPager2-->
-<!--                android:id="@+id/main_ViewPager"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_below="@+id/home_tabLayout"/>-->
-
     </LinearLayout>
 
 
@@ -75,5 +54,5 @@
             android:layout_gravity="start"
             app:headerLayout="@layout/menu_header"
             app:menu="@menu/menulist" />
-
 </androidx.drawerlayout.widget.DrawerLayout>
+

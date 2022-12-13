@@ -2,6 +2,7 @@ package uk.ac.tees.w9585141.blooplus.PatientDetails;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,16 +28,20 @@ import com.google.firebase.database.ValueEventListener;
 
 import uk.ac.tees.w9585141.blooplus.BookedAppList;
 import uk.ac.tees.w9585141.blooplus.R;
+import uk.ac.tees.w9585141.blooplus.auth.LoginActivity;
+import uk.ac.tees.w9585141.blooplus.auth.SignupActivity;
 
 public class patientViewAppActivity extends AppCompatActivity {
 
     private Toolbar mToolbar;
     private RecyclerView recyclerView;
 
-    private String BookedAPKey = "", Appointment_date, slot , Appointment_time , doctorID, currentUID;
+    private String BookedAPKey = "", Appointment_date, slot , Appointment_time , doctorID;
+    String currentUID;
 
     private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+
     
 
 
@@ -43,7 +49,14 @@ public class patientViewAppActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient_view_app);
-        currentUID = mAuth.getCurrentUser().getUid().toString();
+
+        //currentUID=LoginActivity.uid;
+
+        if(mAuth.getCurrentUser()!=null){
+    currentUID = mAuth.getCurrentUser().getUid();
+        }
+
+
 
         mToolbar = (Toolbar) findViewById(R.id.show_bookedAppontmnt);
         setSupportActionBar(mToolbar);
@@ -73,7 +86,7 @@ public class patientViewAppActivity extends AppCompatActivity {
                     public BookedAppointmentsVH onCreateViewHolder(ViewGroup parent, int viewType) {
 
                         View view = LayoutInflater.from(parent.getContext())
-                                .inflate(R.layout.single_booked_appoint,parent,false);
+                                .inflate(R.layout.single_booked_appoint,parent,true);
                         return new BookedAppointmentsVH(view);
                     }
 

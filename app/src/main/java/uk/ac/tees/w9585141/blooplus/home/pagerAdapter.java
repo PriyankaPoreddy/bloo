@@ -1,5 +1,7 @@
 package uk.ac.tees.w9585141.blooplus.home;
 
+import android.content.Context;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -11,6 +13,15 @@ import uk.ac.tees.w9585141.blooplus.home.fragments.SpecializeFragment;
 
 public class pagerAdapter extends FragmentPagerAdapter {
 
+    private Context myContext;
+    int totalTabs;
+
+    public pagerAdapter(Context context, FragmentManager fm, int totalTabs) {
+        super(fm);
+        myContext = context;
+        this.totalTabs = totalTabs;
+    }
+
     public pagerAdapter(FragmentManager fm) {
         super(fm);
     }
@@ -20,15 +31,15 @@ public class pagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
 
         switch (position){
-            case 0:
-                SpecializeFragment specializeFragment = new SpecializeFragment();
-                return specializeFragment;
+//            case 0:
+//                SpecializeFragment specializeFragment = new SpecializeFragment();
+//                return specializeFragment;
 
-            case 1:
+            case 0:
                 DoctorListFragment doctorListFragment = new DoctorListFragment();
                 return doctorListFragment;
 
-            case 2:
+            case 1:
                 DateFragment dateFragment = new DateFragment();
                 return dateFragment;
 
@@ -39,15 +50,15 @@ public class pagerAdapter extends FragmentPagerAdapter {
     }
 
     @Override
-    public int getCount() { return 0;}
+    public int getCount() { return totalTabs; }
 
         public CharSequence getPageTitle(int position) {
             switch (position){
+//                case 0:
+//                    return "SPECIALIZATION";
                 case 0:
-                    return "SPECIALIZATION";
-                case 1:
                     return "DOCTOR";
-                case 2:
+                case 1:
                     return "DATE";
 
                 default:

@@ -6,19 +6,32 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import uk.ac.tees.w9585141.blooplus.auth.LoginActivity;
+import uk.ac.tees.w9585141.blooplus.home.HomeActivity;
 
 public class splashScreen extends AppCompatActivity {
-
+    FirebaseAuth fAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        new Handler().postDelayed(new Runnable() {
+        fAuth=FirebaseAuth.getInstance();
+
+        Handler handler=new Handler();
+        handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                if(fAuth.getCurrentUser()!=null){
+                    startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                    finish();
+                }else{
+                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                    finish();
+                }
             }
-        }, 3000);
+        },2000);
+
     }
 }

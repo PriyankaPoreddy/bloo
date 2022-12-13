@@ -73,7 +73,6 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="60dp"
                     android:layout_marginTop="70dp"
-                    android:onClick="update"
                     android:src="@mipmap/edit_image" />
             <View
                     android:layout_width="match_parent"
@@ -117,7 +116,6 @@
             <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="update"
                     android:src="@drawable/ic_baseline_mode_edit"/>
 
 

@@ -8,7 +8,6 @@ public class BookedAppList {
     private String PatientID;
 
     public BookedAppList(){
-
     }
 
     public BookedAppList(String date, String time, String doctor_ID, String patientID) {
